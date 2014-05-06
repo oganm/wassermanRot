@@ -20,10 +20,10 @@ Analysis Tools
 **sMir.py:** Requires pybedtools. Responsible analysis of cufflinks results. Requires fileno of the RNAseq data from FANTOM as input. Takes in the transcript information sends it to cufflinks. It discludes exomic miRNAs from the analysis. The file exome.bed is downloaded from USCS table browser (USCSgenes-> knownGenes). After that it takes a 5 kb long window around miRNAs to look for transcripts. This requires human.hg19.genome file to be present the working directory. Alternatively, the file can be generated with the commands below.
 
 
-`fout = open('human.hg19.genome','w')
-chromdict = pybedtools.get_chromsizes_from_ucsc('hg19')
-for chrom, size in chromdict.items():
-fout.write("%s\t%s\n" % (chrom, size[1]))
+`fout = open('human.hg19.genome','w')\n
+chromdict = pybedtools.get_chromsizes_from_ucsc('hg19')\n
+for chrom, size in chromdict.items():\n
+fout.write("%s\t%s\n" % (chrom, size[1]))\n
 fout.close()`
 
 
