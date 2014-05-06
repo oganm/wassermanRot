@@ -21,13 +21,9 @@ Analysis Tools
 
 
 `fout = open('human.hg19.genome','w')
-
 chromdict = pybedtools.get_chromsizes_from_ucsc('hg19')
-
 for chrom, size in chromdict.items():
-
 fout.write("%s\t%s\n" % (chrom, size[1]))
-
 fout.close()`
 
 
