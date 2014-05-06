@@ -39,6 +39,9 @@ Commented out sections are to include individual exons to the analysis but these
 
 **lifeCrawler.R:** For analysis of QPCR data. Gets the names of probes from Life Technologies. Looks for an increase in 3p/5p ratio.
  
+ **randomDistance.py:** Using the output of RNAclust, it picks groups of pre-miRNA randomly and with matching GC content. Puts their distance information in a file. Repeats.
+ 
+ **compareDistances.R:** Analyses the output of randomDistance.py. Plotting and wilcoxon rank sum test.
  
 **locarn.R:** Using RNAclust distances and names, outputs 1% quantile of the ones closest to capped miRNA precursors. Alternating commented out sections are used to do it both to long and short versions. There is also a difference between selecting microRNA as few of the mouse miRNAs at the long set were actually of the normal size. This also decreased the number of unique results when selecting precursors.
 
