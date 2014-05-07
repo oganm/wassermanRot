@@ -73,10 +73,10 @@ for i in xrange(0,len(hMir.name)):
             seedStart = hMir.end[i] - 8
 
         if hMir.strand[i] == '+':
-            seedStart = hMir.start[i]
+            seedStart = hMir.start[i] -1
             seedEnd = seedStart + 8
             
-        seedSeq = seqH.giveSeq(hMir.chro[i], seedStart - 1, seedEnd-1, \
+        seedSeq = seqH.giveSeq(hMir.chro[i], seedStart , seedEnd, \
                                strand = hMir.strand[i], string = True)
         
         seedStep = seedStep + 1
@@ -113,10 +113,10 @@ for i in xrange(0,len(mCappedLines)):
             seedStart = mMir.end[index + step] - 8
 
         if mMir.strand[index] == '+':
-            seedStart = mMir.start[index + step]
+            seedStart = mMir.start[index + step] -1
             seedEnd = seedStart+8
             
-        seedSeq = seqM.giveSeq(mMir.chro[index], seedStart - 1, seedEnd-1, \
+        seedSeq = seqM.giveSeq(mMir.chro[index], seedStart , seedEnd, \
                                strand = mMir.strand[index], string = True)
         
         mSeedSeqs[seedStep] = seedSeq
@@ -133,14 +133,14 @@ seqM.clearModule()
 def similarity7(seq1,seq2):
     o=0
     for i in range(1,8):
-       o=o+int(seq1[i]==seq2[i])
+       o=o+int(seq1[i].lower()==seq2[i].lower())
     return o
         
         
 def similarity6(seq1,seq2):
     o=0
     for i in range(1,7):
-        o=o+int(seq1[i]==seq2[i])
+        o=o+int(seq1[i].lower()==seq2[i].lower())
     return o
 
 #def similarity(seq1,seq2):
